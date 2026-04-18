@@ -8,3 +8,7 @@
 - Request đến trụ sở của Shopee ở Singapore
 - Server xử lý request của người dùng và trả về dữ liệu theo chiều ngược lại
 - Browser người dùng nhận HTML, CSS, JS và render ra giao diện
+
+2. Tab network trong DevTools cho biết các thông tin: Mọi tài nguyên được tải xuống hoặc gửi đi, trạng thái của từng request, kich thước của file tải về, thời gian mất bao lâu để tải file,... 
+![Request đầu và thời gian load trang](./anh1.png)
+![Request đầu và thời gian load trang](./anh2.png)
