@@ -62,3 +62,26 @@ Hộp 3
     - Không mang tính semantic và ảnh hưởng đến SEO
     - Khó để thiết kế theo đúng như ý, tại các bảng khá cứng nhắc
     - Code không sạch và ảnh hưởng đến trải nghiệm người dùng
+
+### Câu B3:
+1. Sai khai báo DOCTYPE: `<!DOCTYPE>` thiếu chữ html (`<!DOCTYPE html`)
+
+2. Thẻ title chưa đóng: `<title>Trang web` đang bị thiếu thẻ đóng ` </title> `
+
+3. Sai giá trị charset: Thuộc tính `<meta charset="utf8">` thiếu dấu gạch ngang, sửa thành charset="UTF-8".
+
+4. Thẻ `<h1>` đóng sai: `<h1>Welcome to ShopTLU<h1>`, sửa thành `</h1>` ở cuối
+
+5. Thẻ `<a>` đóng sai: phần `<a href="home">Trang chủ<a>` thiếu dấu `/` ở thẻ đóng `</a>`.
+
+6. Thẻ `<img>` thiếu ngoặc kép: `src=iphone.jpg` đặt trong dấu ngoặc kép `src="iphone.jpg" `
+
+7. Thẻ `<img>` thiếu thuộc tính alt
+
+8. Lỗi lồng thẻ: `<b>25.990.000đ</p></b>` sai thứ tự. Cần sửa thành `<b>25.990.000đ</b></p>`
+
+9. Dùng nhiều thẻ `<main>`: Sửa `<main><p>Sidebar content</p></main>` đổi thành thẻ `<aside> `
+
+10. Thẻ `<p>` ở footer chưa đóng: `<p>Copyright 2026 đang bị thiếu </p>`
+
+11. Thiếu thẻ `</html>`: Dưới cùng của tài liệu chưa được chốt bằng thẻ đóng `</html>`
