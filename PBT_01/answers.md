@@ -45,3 +45,10 @@ Các lỗi semantic:
     <p>© 2026 ShopTLU</p>
 </footer>
 ```
+
+### Câu A3:
+Hộp 1
+TextATextB
+Hộp 2
+TextCTextD (TextD im đậm)
+Hộp 3
