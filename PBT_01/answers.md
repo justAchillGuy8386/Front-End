@@ -52,3 +52,13 @@ TextATextB
 Hộp 2
 TextCTextD (TextD im đậm)
 Hộp 3
+
+### Câu A4:
+1.  Sự khác nhau:
+    - thead: table header, dùng để ghi tiêu đề các cột
+    - tbody: table body, thân bảng chứa các dữ liệu chính
+    - tfoot: table footer, thường dùng để ghi các hàng tổng cộng, tổng kết 
+2. Không nên dùng table trong layout trang web bởi vì: 
+    - Không mang tính semantic và ảnh hưởng đến SEO
+    - Khó để thiết kế theo đúng như ý, tại các bảng khá cứng nhắc
+    - Code không sạch và ảnh hưởng đến trải nghiệm người dùng
