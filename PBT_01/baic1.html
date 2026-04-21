@@ -1,0 +1,119 @@
+<!DOCTYPE html> 
+<html lang="vi"> 
+<head> 
+    <meta charset="UTF-8">
+    <title>iPhone 16 - Chi tiết sản phẩm</title> 
+</head>
+<body> 
+    <header> <!-- header để dưới dạng danh sách-->
+        <nav> <!--nav dùng để điều hướng-->
+            <ul> <!--danh sách các mục điều hướng-->
+                <li> <<!--li dùng để liệt kê các mục điều hướng-->
+                    <a href="/">Trang chủ</a>
+                </li> 
+                <li>
+                    <a href="/danh-muc">Danh mục</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main> 
+        <nav aria-label="breadcrumb"> <!--breadcrumb dùng để hiển thị đường dẫn hiện tại-->
+            <ol> <!--ol dùng để liệt kê các mục trong breadcrumb-->
+                <li> <!--li dùng để liệt kê các mục trong breadcrumb-->
+                    <a href="/">Trang chủ</a>
+                </li> 
+                <li>
+                    <a href="/dien-thoai">Điện thoại</a>
+                </li> 
+                <li>
+                    <a href="/iphone-16" aria-current="page">iPhone 16</a>
+                </li> 
+            </ol>
+        </nav>
+
+        <article> <!--article dùng để chứa nội dung chính của trang-->
+            <section aria-label="Hình ảnh sản phẩm"> <!--section dùng để chia nội dung thành các phần có chủ đề riêng biệt-->
+                <figure> <!--figure dùng để nhóm các phần tử liên quan đến hình ảnh sản phẩm-->
+                    <img src="img1.jpg" alt="Mặt trước iPhone 16"> 
+                    <img src="img2.jpg" alt="Mặt sau iPhone 16"> 
+                    <img src="img3.jpg" alt="Cạnh bên iPhone 16"> 
+                    <img src="img4.jpg" alt="Camera iPhone 16"> 
+                    <img src="img5.jpg" alt="Phụ kiện iPhone 16"> 
+                </figure>
+            </section>
+
+            <section aria-label="Thông tin cơ bản"> <!--section dùng để chứa thông tin cơ bản về sản phẩm-->
+                <h1>iPhone 16 Pro Max 256GB</h1> 
+                <div class="rating" aria-label="Đánh giá 5 sao">
+                    ⭐⭐⭐⭐⭐
+                </div> 
+                <p class="price">
+                    <strong>25.990.000đ</strong>
+                </p> 
+                <p class="description">Đoạn văn mô tả ngắn về tính năng nổi bật của sản phẩm...</p> 
+                <button type="button">Thêm vào giỏ hàng</button> 
+            </section>
+
+            <section aria-label="Thông số kỹ thuật"> <!--section dùng để chứa thông số kỹ thuật của sản phẩm-->
+                <h2>Thông số kỹ thuật</h2> 
+                <table border="1"> <!--table dùng để hiển thị thông số kỹ thuật dưới dạng bảng-->
+                    <thead> <!--thead dùng để chứa phần đầu của bảng-->
+                        <tr> <!--tr dùng để tạo một hàng trong bảng-->
+                            <th>Thông số</th> <!--th dùng để tạo một ô tiêu đề trong bảng-->
+                            <th>Chi tiết</th>
+                        </tr>
+                    </thead>
+
+                    <tbody> 
+                        <tr> 
+                            <th>Màn hình</th> 
+                            <td>OLED 6.1 inch</td> 
+                        </tr>
+                        <tr>
+                            <th>Chipset</th>
+                            <td>Apple A18 Bionic</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="reviews"> <!--section dùng để chứa phần đánh giá của khách hàng-->
+                <h2>Đánh giá từ khách hàng</h2> 
+                <article> <!--article dùng để chứa nội dung của một đánh giá cụ thể-->
+                    <header> 
+                        <h3>Nguyễn Văn A</h3> 
+                        <time datetime="2026-04-20">20/04/2026</time> 
+                    </header>
+                    <p>Sản phẩm thiết kế đẹp, xài rất mượt.</p> 
+                </article>
+            </section>
+        </article>
+
+        <aside> <!--aside dùng để chứa nội dung phụ, như sản phẩm tương tự hoặc thông tin liên hệ-->
+            <h2>Sản phẩm tương tự</h2>
+            <ul> <!--ul dùng để liệt kê các sản phẩm tương tự-->
+                <li>
+                    <a href="#">iPhone 15 Pro</a>
+                </li>
+                <li>
+                    <a href="#">Samsung Galaxy S24</a>
+                </li>
+            </ul>
+        </aside>
+
+    </main>
+
+    <footer> <!--footer dùng để chứa thông tin bản quyền và liên kết chân trang-->
+        <p>&copy; 2026 Cửa hàng e-Commerce. Mọi quyền được bảo lưu.</p> <!--p dùng để chứa thông tin bản quyền-->
+        <nav aria-label="Liên kết chân trang"> 
+            <ul>
+                <li><a href="/chinh-sach">Chính sách bảo hành</a></li>
+                <li><a href="/lien-he">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+</html>

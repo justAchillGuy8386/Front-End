@@ -63,6 +63,8 @@ Hộp 3
     - Khó để thiết kế theo đúng như ý, tại các bảng khá cứng nhắc
     - Code không sạch và ảnh hưởng đến trải nghiệm người dùng
 
+## Phần B
+
 ### Câu B3:
 1. Sai khai báo DOCTYPE: `<!DOCTYPE>` thiếu chữ html (`<!DOCTYPE html`)
 
@@ -85,3 +87,23 @@ Hộp 3
 10. Thẻ `<p>` ở footer chưa đóng: `<p>Copyright 2026 đang bị thiếu </p>`
 
 11. Thiếu thẻ `</html>`: Dưới cùng của tài liệu chưa được chốt bằng thẻ đóng `</html>`
+
+### Câu B4:
+1. 3 thẻ semantic mà tiki.vn sử dụng: `<script>`, `<a>`, `<img>`
+- Thẻ không phải semantic: `<div>`
+
+2. Trang không có table
+
+3. Input types được dùng là aria-label
+
+
+## Phần C
+
+### Câu C2:
+Thẻ `<div>` tuy dễ dùng và dễ làm quen cho người mới học nhưng về lâu dài, bỏ qua semantic HTML mà chỉ dùng mỗi thẻ `<div>` sẽ tạo ra không đẹp và ít có khả năng tùy biến.
+
+Xét về SEO, các máy tìm kiếm như Google không đọc giao diện CSS mà đọc mã HTML để hiểu cấu trúc trang. Việc sử dụng các thẻ semantic như `<main>`, `<article>`, hay `<aside>` giúp Google xác định chính xác đâu là nội dung cốt lõi và đâu là thông tin phụ. Một trang web chỉ toàn thẻ  `<div>` sẽ khiến website trở thành một trang nội dung thuần, làm giảm SEO và khó tiếp cận người dùng.
+
+Thứ hai, về khả năng tiếp cận, Semantic HTML rất cần thiết cho việc tương tác với trang web. Ví dụ: nếu tự tạo một nút bấm bằng `<div class="btn" onClick={...}>` thay vì dùng thẻ `<button>`, phần tử đó sẽ mất đi khả năng được focus bằng phím Tab hoặc kích hoạt bằng phím Enter. Lúc này ta lại phải tốn thêm thời gian viết JavaScript để xử lý sự kiện CLick, biến một việc đơn giản thành phức tạp.
+
+Tuy vậy, thẻ `<div>` không hề sai nếu dùng đúng chỗ. Trường hợp thực tế nhất để dùng `<div>` là khi cần một container thuần túy để nhóm các phần tử lại phục vụ việc dàn trang trong CSS như tạo Grid/Flexbox wrapper hoặc làm vỏ bọc ngoài cùng cho các component mà không làm xáo trộn cấu trúc ngữ nghĩa tổng thể của website.
