@@ -85,3 +85,11 @@ Hộp 3
 10. Thẻ `<p>` ở footer chưa đóng: `<p>Copyright 2026 đang bị thiếu </p>`
 
 11. Thiếu thẻ `</html>`: Dưới cùng của tài liệu chưa được chốt bằng thẻ đóng `</html>`
+
+### Câu B4:
+1. 3 thẻ semantic mà tiki.vn sử dụng: `<script>`, `<a>`, `<img>`
+- Thẻ không phải semantic: `<div>`
+
+2. Trang không có table
+
+3. Input types được dùng là aria-label
