@@ -107,3 +107,7 @@ Xét về SEO, các máy tìm kiếm như Google không đọc giao diện CSS m
 Thứ hai, về khả năng tiếp cận, Semantic HTML rất cần thiết cho việc tương tác với trang web. Ví dụ: nếu tự tạo một nút bấm bằng `<div class="btn" onClick={...}>` thay vì dùng thẻ `<button>`, phần tử đó sẽ mất đi khả năng được focus bằng phím Tab hoặc kích hoạt bằng phím Enter. Lúc này ta lại phải tốn thêm thời gian viết JavaScript để xử lý sự kiện CLick, biến một việc đơn giản thành phức tạp.
 
 Tuy vậy, thẻ `<div>` không hề sai nếu dùng đúng chỗ. Trường hợp thực tế nhất để dùng `<div>` là khi cần một container thuần túy để nhóm các phần tử lại phục vụ việc dàn trang trong CSS như tạo Grid/Flexbox wrapper hoặc làm vỏ bọc ngoài cùng cho các component mà không làm xáo trộn cấu trúc ngữ nghĩa tổng thể của website.
+
+
+## Phần D: Video OBS
+- Link Youtube: https://youtu.be/litXqZB33IE
