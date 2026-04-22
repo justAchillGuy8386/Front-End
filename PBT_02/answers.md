@@ -18,3 +18,36 @@
 9. type="range" → Một thanh trượt ngang có một nút tròn để kéo qua lại, không cần validation báo lỗi vì người dùng chỉ có thể kéo trong một khoảng giá trị min và max đã định sẵn → Dùng cho bộ lọc bên thanh sidebar để khách hàng kéo chọn khoảng giá sản phẩm muốn tìm 
 
 10. type="file" → Nút bấm "Choose File" kèm theo dòng text hiển thị tên tệp tin đã chọn, tự động chặn người dùng chọn sai loại tệp nếu được thiết lập thuộc tính accept → Dùng để khách hàng tải lên hình ảnh hoặc video minh họa tình trạng sản phẩm bị lỗi khi gửi yêu cầu đổi hàng hoặc bảo hành
+
+## Câu A2:
+1. Trường hợp 1: `<input type="text" required value="">`
+
+Dự đoán: Trình duyệt sẽ chặn không cho gửi form và hiển thị thông báo lỗi yêu cầu nhập dữ liệu.
+
+Giải thích: Thuộc tính required bắt buộc trường này không được để trống. Vì value="", điều kiện này bị vi phạm.
+
+2. Trường hợp 2: `<input type="email" value="abc">`
+
+Dự đoán: Form bị chặn lại. Trình duyệt báo lỗi định dạng email không hợp lệ 
+
+Giải thích: type="email" có bộ kiểm tra (regex) ngầm định của trình duyệt, yêu cầu chuỗi nhập vào tối thiểu phải có ký tự @ và cấu trúc tên miền cơ bản. "abc" không thỏa mãn.
+
+3. Trường hợp 3: `<input type="number" min="1" max="10" value="15">`
+
+Dự đoán: Form bị chặn. Trình duyệt báo lỗi giá trị vượt quá giới hạn cho phép 
+
+Giải thích: Thuộc tính max="10" thiết lập giới hạn trên là 10. Giá trị người dùng nhập là 15, lớn hơn giới hạn này.
+
+4. Trường hợp 4: `<input type="text" pattern="[0-9]{10}" value="abc123">`
+
+Dự đoán: Form bị chặn. Trình duyệt báo lỗi định dạng không khớp 
+
+Giải thích: Thuộc tính pattern sử dụng Regular Expression [0-9]{10}, đòi hỏi người dùng phải nhập chính xác 10 chữ số từ 0 đến 9. Chuỗi "abc123" chứa chữ cái và chỉ dài 6 ký tự nên hoàn toàn sai lệch.
+
+5. Trường hợp 5: `<input type="password" minlength="8" value="123">`
+
+Dự đoán: Form bị chặn. Trình duyệt báo lỗi độ dài quá ngắn 
+
+Giải thích: Thuộc tính minlength="8" yêu cầu chuỗi nhập vào phải có ít nhất 8 ký tự. Chuỗi "123" chỉ có 3 ký tự nên không vượt qua được bài kiểm tra.
+
+- So sánh với dự đoán: Khi bấm Submit, trình duyệt sẽ kiểm tra mã HTML từ trên xuống dưới. Nó sẽ dừng lại ngay ở lỗi đầu tiên nó gặp phải, tự động focus vào ô đó và hiện popup thông báo lỗi. Ta sẽ phải sửa xong lỗi thứ 1, bấm Submit tiếp, thì nó mới hiện lỗi ở ô thứ 2. Nó không hiện 5 lỗi cùng một lúc.
