@@ -51,3 +51,25 @@ Dự đoán: Form bị chặn. Trình duyệt báo lỗi độ dài quá ngắn
 Giải thích: Thuộc tính minlength="8" yêu cầu chuỗi nhập vào phải có ít nhất 8 ký tự. Chuỗi "123" chỉ có 3 ký tự nên không vượt qua được bài kiểm tra.
 
 - So sánh với dự đoán: Khi bấm Submit, trình duyệt sẽ kiểm tra mã HTML từ trên xuống dưới. Nó sẽ dừng lại ngay ở lỗi đầu tiên nó gặp phải, tự động focus vào ô đó và hiện popup thông báo lỗi. Ta sẽ phải sửa xong lỗi thứ 1, bấm Submit tiếp, thì nó mới hiện lỗi ở ô thứ 2. Nó không hiện 5 lỗi cùng một lúc.
+
+## Câu A3:
+1. Thuộc tính `for` trong thẻ `<label>` phải thuộc tính id của thẻ `<input>`. Với người dùng Screen Reader: Khi họ điều hướng vào một ô `<input>`, trình đọc màn hình sẽ tìm thẻ `<label>` được liên kết với nó và đọc to lên. Nếu không có liên kết này, trình đọc màn hình sẽ chỉ thông báo "edit text", khiến người khiếm thị hoàn toàn không biết họ cần phải nhập thông tin gì vào ô đó
+
+2. Thẻ `<fieldset>` kết hợp với `<legend>` được dùng để nhóm các trường nhập liệu có liên quan chặt chẽ với nhau về mặt ngữ nghĩa hoặc chức năng thành một khối thống nhất. Ví dụ cụ thể:
+
+```
+<fieldset>
+    <legend>Phương thức nhận thông báo</legend>
+    <label>
+        <input type="checkbox" name="notify" value="email" checked>
+        Qua Email
+    </label>
+    <label>
+        <input type="checkbox" name="notify" value="sms">
+        Qua SMS
+    </label>
+</fieldset>
+```
+
+3. Dùng `aria-label` khi thuộc tính này được sử dụng khi một phần tử tương tác không có văn bản mô tả hiển thị trực tiếp trên giao diện màn hình để người dùng đọc
+- Tại sao không nên dùng aria-label khi đã có `<label>`: Mục đích chính của cả hai là cung cấp tên gọi mô tả cho phần tử. Nếu một ô `<input>` đã được gắn đúng chuẩn với một thẻ `<label>` hiển thị rõ ràng trên màn hình, việc thêm aria-label có chứa nội dung tương tự vào ô `<input>` là thừa. Nó sẽ khiến trình đọc màn hình bị nhầm lẫn, dẫn đến việc đọc lặp đi lặp lại cùng một thông tin, gây khó chịu và giảm trải nghiệm của người dùng
