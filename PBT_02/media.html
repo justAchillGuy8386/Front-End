@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 0 15px;
+        }
+        section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        figure {
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        figcaption {
+            font-style: italic;
+            color: #555;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="text-align: center;">
+            <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="45" stroke="#2e7d32" stroke-width="5" fill="#e8f5e9" />
+                <path d="M 35 60 Q 50 20 65 60" stroke="#2e7d32" stroke-width="4" fill="transparent"/>
+                <text x="50" y="75" font-size="16" font-weight="bold" font-family="Arial" text-anchor="middle" fill="#1b5e20">DHerbal</text>
+            </svg>
+            <h1>Trang giới thiệu multimedia</h1>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2> Nhạc nền</h2>
+            <p>Bật đoạn nhạc không lời này để có trải nghiệm xem sản phẩm tốt nhất.</p>
+            <audio controls>
+                <source src="/relax.mp3" type="audio/mpeg">
+            </audio>
+        </section>
+
+        <section>
+            <h2>Bộ sưu tập hình ảnh</h2>
+            
+            <figure>
+                <img src="https://placehold.co/800x400/2e7d32/white?text=DHerbal+Bo+Ket+Front" 
+                     alt="Mặt trước chai dầu gội DHerbal Bồ Kết dung tích 300ml" 
+                     loading="lazy" 
+                     style="max-width: 100%; height: auto;">
+                <figcaption>Hình 1: Thiết kế mặt trước sang trọng, thân thiện với môi trường.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://placehold.co/800x400/4caf50/white?text=DHerbal+Ingredients" 
+                     alt="Chi tiết các thành phần thảo dược in trên mặt sau chai" 
+                     loading="lazy" 
+                     style="max-width: 100%; height: auto;">
+                <figcaption>Hình 2: Bảng thành phần 100% thảo mộc tự nhiên an toàn cho da đầu.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://placehold.co/800x400/81c784/white?text=DHerbal+Texture" 
+                     alt="Kết cấu của dầu gội khi đổ ra tay" 
+                     loading="lazy" 
+                     style="max-width: 100%; height: auto;">
+                <figcaption>Hình 3: Kết cấu cô đặc, tiết kiệm hơn khi sử dụng.</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Video Review từ Beauty Blogger</h2>
+            <p>Lắng nghe đánh giá khách quan từ những người đã trải nghiệm sản phẩm.</p>
+            <iframe width="100%" height="400" 
+                    src="https://www.youtube.com/watch?v=CPiJhoyzelQ" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+            </iframe>
+        </section>
+
+        <section>
+            <h2>Video Hướng dẫn Gội đầu đúng chuẩn Salon</h2>
+            <p>Video do chính DHerbal sản xuất giúp bạn hiểu hơn về công dụng của sản phẩm.</p>
+            <video controls 
+                   poster="https://placehold.co/800x450/000000/ffffff?text=Click+de+xem+Video+Huong+Dan" 
+                   style="max-width: 100%; height: auto;">
+                <source src="assets/video/huong-dan-goi-dau.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ thẻ video HTML5. Bạn có thể <a href="assets/video/huong-dan-goi-dau.mp4">tải video tại đây</a>.
+            </video>
+        </section>
+    </main>
+
+    <footer>
+        <p style="text-align: center; color: #777;">&copy; 2026 DHerbal. Khỏe đẹp từ thiên nhiên.</p>
+    </footer>
+
+</body>
+</html>
