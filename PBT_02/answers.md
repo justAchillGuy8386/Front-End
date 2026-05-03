@@ -111,5 +111,21 @@ Sửa: `<label for="phone">Phone:</label> <input type="tel" id="phone" name="pho
 </label>
 ```
 
-8. Lỗi 8: Dòng nút Gửi – Sử dụng `<input type="submit">`. Mặc dù không sai cú pháp, nhưng Best Practice hiện đại khuyên dùng thẻ `<button type="submit">` vì thẻ button cho phép lồng ghép HTML bên trong (như thêm thẻ <img> hoặc thẻ <i> chứa icon SVG) giúp dễ dàng style giao diện hơn.
+8. Lỗi 8: Dòng nút Gửi – Sử dụng `<input type="submit">`. Mặc dù không sai cú pháp, nhưng Best Practice hiện đại khuyên dùng thẻ `<button type="submit">` vì thẻ button cho phép lồng ghép HTML bên trong (như thêm thẻ `<img>` hoặc thẻ `<i>` chứa icon SVG) giúp dễ dàng style giao diện hơn.
 Sửa: `<button type="submit">Gửi</button>`
+
+## Câu C2:
+1. Pattern Regex cho CMND/CCCD và Số tài khoản
+- CCCD đúng 12 số: `pattern="[0-9]{12}"`: nhập các số từ 0-9, đúng số lượng 12 số
+- Số tài khoản từ 10 đến 15 chữ số: `pattern="[0-9]{10,15}"`
+
+2. HTML5 không đủ an toàn cho ứng dụng ngân hàng bởi vì HTML5 validation sinh ra chỉ để phục vụ cho Trải nghiệm người dùng (UX), giúp hướng dẫn người dùng điền đúng thông tin, chứ không phải là một lớp bảo mật. Nó hoạt động hoàn toàn ở phía Client
+
+3. 3 loại validation mà HTML5 không thể làm được, phải dùng JS:
+- Validation chéo giữa các trường: HTML5 không thể biết giá trị của trường này để so sánh với trường kia. Ví dụ là yêu cầu ô "Nhập lại mật khẩu" phải trùng khớp 100% với ô "Mật khẩu" vừa nhập ở trên
+- Validation bất đồng bộ: HTML5 không thể giao tiếp với cơ sở dữ liệu. Nếu muốn kiểm tra xem "Email này đã được ai đăng ký trong hệ thống chưa?" hoặc "Số CCCD này có hợp lệ trên hệ thống quốc gia không?" ngay khi vừa gõ xong, bắt buộc phải dùng JS để gọi API lên server
+- Validation theo điều kiện logic: HTML5 không xử lý được các logic dạng IF - ELSE. Ví dụ: Nếu người dùng chọn nghề nghiệp là "Sinh viên", thì ô "Mã số sinh viên" trở thành bắt buộc nhập; ngược lại thì ô đó bị ẩn đi và không bắt buộc
+
+4. 2 rủi ro bảo mật nếu chỉ Validate trên Frontend mà bỏ qua Backend
+- Lỗi Injection: Hacker bypass Frontend và gửi các đoạn mã SQL độc hại hoặc mã JavaScript thực thi vào các ô input. Nếu Backend lưu thẳng vào database, hacker có thể xóa sạch dữ liệu ngân hàng, đánh cắp thông tin tài khoản hoặc chiếm quyền điều khiển hệ thống
+- Ô nhiễm dữ liệu & Lỗ hổng nghiệp vụ: Trình duyệt chỉ yêu cầu chuyển 1.000.000đ, nhưng hacker dùng Postman sửa thành chuyển -5.000.000đ (số âm). Nếu Backend không validate lại tính hợp lệ của con số (phải lớn hơn 0), logic tính toán sẽ bị sai lệch hoàn toàn, dẫn đến việc hacker tự nhiên được cộng thêm tiền vào tài khoản
