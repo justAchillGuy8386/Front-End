@@ -129,3 +129,6 @@ Sửa: `<button type="submit">Gửi</button>`
 4. 2 rủi ro bảo mật nếu chỉ Validate trên Frontend mà bỏ qua Backend
 - Lỗi Injection: Hacker bypass Frontend và gửi các đoạn mã SQL độc hại hoặc mã JavaScript thực thi vào các ô input. Nếu Backend lưu thẳng vào database, hacker có thể xóa sạch dữ liệu ngân hàng, đánh cắp thông tin tài khoản hoặc chiếm quyền điều khiển hệ thống
 - Ô nhiễm dữ liệu & Lỗ hổng nghiệp vụ: Trình duyệt chỉ yêu cầu chuyển 1.000.000đ, nhưng hacker dùng Postman sửa thành chuyển -5.000.000đ (số âm). Nếu Backend không validate lại tính hợp lệ của con số (phải lớn hơn 0), logic tính toán sẽ bị sai lệch hoàn toàn, dẫn đến việc hacker tự nhiên được cộng thêm tiền vào tài khoản
+
+## Phần D: Video OBS
+Link YT: https://youtu.be/vpKKaThx5wg
