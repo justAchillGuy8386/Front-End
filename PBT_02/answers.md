@@ -73,3 +73,43 @@ Giải thích: Thuộc tính minlength="8" yêu cầu chuỗi nhập vào phải
 
 3. Dùng `aria-label` khi thuộc tính này được sử dụng khi một phần tử tương tác không có văn bản mô tả hiển thị trực tiếp trên giao diện màn hình để người dùng đọc
 - Tại sao không nên dùng aria-label khi đã có `<label>`: Mục đích chính của cả hai là cung cấp tên gọi mô tả cho phần tử. Nếu một ô `<input>` đã được gắn đúng chuẩn với một thẻ `<label>` hiển thị rõ ràng trên màn hình, việc thêm aria-label có chứa nội dung tương tự vào ô `<input>` là thừa. Nó sẽ khiến trình đọc màn hình bị nhầm lẫn, dẫn đến việc đọc lặp đi lặp lại cùng một thông tin, gây khó chịu và giảm trải nghiệm của người dùng
+
+## Câu C1:
+1. Lỗi 1: Thẻ `<form>` thiếu thuộc tính action và method. Vì form chứa mật khẩu, việc không khai báo method là POST sẽ khiến trình duyệt mặc định gửi bằng phương thức GET, làm lộ mật khẩu trên URL
+Sửa: `<form action="/submit" method="POST">`  
+
+2. Lỗi 2: Dòng "Tên" – Không có thẻ `<label for="...">` liên kết với id của input, và thiếu thuộc tính name (bắt buộc phải có để gửi dữ liệu lên server) cùng required để bắt lỗi bỏ trống.
+Sửa: `<label for="fullname">Tên:</label> <input type="text" id="fullname" name="fullname" required>  
+
+3. Lỗi 3: Dòng "Email" – Dùng placeholder để thay thế hoàn toàn cho `<label>`. Đây là lỗi nghiêm trọng vì placeholder sẽ biến mất khi gõ và trình đọc màn hình không đọc placeholder làm nhãn. Cũng thiếu id, name, required.
+Sửa: `<label for="email">Email:</label> <input type="email" id="email" name="email" required placeholder="Email của bạn">`  
+
+4. Lỗi 4: Dòng "Password" tương tự lỗi email, lạm dụng placeholder thay vì `<label>`. Form cũng không có validation cơ bản như yêu cầu chiều dài tối thiểu cho mật khẩu.
+Sửa:  
+```
+<label for="pwd">Mật khẩu:</label>
+<input type="password" id="pwd" name="pwd" required minlength="8" placeholder="Mật khẩu">
+```
+
+5. Lỗi 5: Dòng "Phone" – Dùng sai `type="text"` thay vì `type="tel"` (để gọi bàn phím số trên mobile). Ngoài ra, việc dùng thuộc tính `value="0901234567"` làm gợi ý là sai UX, vì người dùng sẽ phải mất công xóa dòng chữ đó đi trước khi nhập
+Sửa: `<label for="phone">Phone:</label> <input type="tel" id="phone" name="phone" placeholder="0901234567">`
+
+6. Lỗi 6: Dòng `<select>` – Thiếu `<label>` đi kèm, thiếu thuộc tính name để submit. Các thẻ `<option>` bên trong cũng không có thuộc tính value để định nghĩa giá trị dữ liệu sẽ được gửi đi. Sửa:
+```
+<label for="city">Thành phố:</label>
+<select id="city" name="city" required>
+    <option value="" disabled selected>-- Chọn thành phố --</option>
+    <option value="hanoi">Hà Nội</option>
+    <option value="hcm">TP.HCM</option>
+</select>
+```
+
+7. Lỗi 7: Dòng `<label>Tôi đồng ý điều khoản</label>` Thẻ label này bị lẻ, hoàn toàn không bọc hay liên kết với bất kỳ thẻ `<input type="checkbox">` nào để người dùng có thể tick chọn. Sửa:
+```
+<label>
+    <input type="checkbox" name="agree" required> Tôi đồng ý điều khoản
+</label>
+```
+
+8. Lỗi 8: Dòng nút Gửi – Sử dụng `<input type="submit">`. Mặc dù không sai cú pháp, nhưng Best Practice hiện đại khuyên dùng thẻ `<button type="submit">` vì thẻ button cho phép lồng ghép HTML bên trong (như thêm thẻ <img> hoặc thẻ <i> chứa icon SVG) giúp dễ dàng style giao diện hơn.
+Sửa: `<button type="submit">Gửi</button>`
