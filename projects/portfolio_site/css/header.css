@@ -1,14 +1,26 @@
+body {
+    margin: 0;
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 60px 40px;
+    font-family: system-ui, sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    z-index: 10;
 }
 
 .logo {
-    color: #333;
-    font-size: 24px;
-    font-weight: bold;
+    color: #c00aee;
+    font-size: 50px;
+    font-weight: bolder;
 }
 
 nav {
@@ -17,11 +29,7 @@ nav {
 
 nav a {
     color: #333;
-    font-size: 18px;
+    font-size: 40px;
     text-decoration: none;
     margin-left: 20px;
-}
-
-nav a:first-child {
-    margin-left: 0;
 }
