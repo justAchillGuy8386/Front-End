@@ -1,0 +1,32 @@
+section.hero {
+    text-align: center;
+    padding: 400px 20px;
+    background-color: #7f10ff;
+    font-family: system-ui, sans-serif;
+    min-height: 100vh;
+}
+
+section.hero h1 {
+    font-size: 90px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+section.hero p {
+    font-size: 30px;
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 60px;
+    font-weight: 10;
+}
+
+section a.cta-button {
+    display: inline-block;
+    padding: 25px 30px;
+    font-size: 20px;
+    color: #2b87ff;
+    background-color: #ffffff;
+    border-radius: 60px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
