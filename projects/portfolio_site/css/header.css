@@ -1,0 +1,27 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    margin-left: auto;
+}
+
+nav a {
+    color: #333;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav a:first-child {
+    margin-left: 0;
+}
