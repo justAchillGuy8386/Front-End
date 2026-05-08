@@ -1,0 +1,203 @@
+/* ============================================================
+   style.css — Profile Page Stylesheet (Bài B1)
+   Selector types used: element, class, id, descendant, pseudo-class
+   ============================================================ */
+
+/* Reset & Box Sizing */
+* {
+    box-sizing: border-box;   /* ← dòng đầu tiên bắt buộc */
+    margin: 0;
+    padding: 0;
+}
+
+/* ── 1. ELEMENT SELECTOR ─────────────────────────────────── */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #2d3748;
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    color: #1a365d;
+    border-bottom: 2px solid #bee3f8;
+    padding-bottom: 8px;
+}
+
+h3 {
+    font-size: 1.1rem;
+    color: #2b6cb0;
+}
+
+table {
+    width: 100%;
+}
+
+footer {
+    background: #1a202c;
+    color: #a0aec0;
+    text-align: center;
+    padding: 20px;
+    margin-top: 32px;
+}
+
+/* ── 2. ID SELECTOR ──────────────────────────────────────── */
+#main-header {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2b6cb0 50%, #4299e1 100%);
+    color: white;
+    padding: 32px 24px 20px;
+}
+
+#profile-section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+/* ── 3. CLASS SELECTOR ───────────────────────────────────── */
+.header-inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 860px;
+    margin: 0 auto 16px;
+}
+
+.avatar {
+    width: 72px;
+    height: 72px;
+    background: rgba(255,255,255,.25);
+    border: 3px solid rgba(255,255,255,.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+}
+
+.tagline {
+    font-size: .95rem;
+    opacity: .85;
+    margin-top: 4px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    transition: box-shadow .2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,.12);
+}
+
+.skill-table {
+    border-collapse: collapse;
+    font-size: .95rem;
+}
+
+.edu-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.edu-item:last-child {
+    border-bottom: none;
+}
+
+.edu-year {
+    color: #718096;
+    font-size: .88rem;
+    margin: 4px 0;
+}
+
+.contact-list {
+    list-style: none;
+}
+
+.contact-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f7fafc;
+    font-size: .95rem;
+}
+
+/* ── 4. DESCENDANT SELECTOR ──────────────────────────────── */
+header nav {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* Tất cả <a> bên trong .card */
+.card a {
+    color: #3182ce;
+    text-decoration: none;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* Table header row */
+.skill-table thead tr th {
+    background: #1a365d;
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Table body cells */
+.skill-table tbody tr td {
+    padding: 11px 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* ── 5. PSEUDO-CLASS SELECTOR ────────────────────────────── */
+
+/* Navigation links — mặc định */
+.nav-link {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: rgba(255,255,255,.8);
+    font-size: .9rem;
+    transition: background .2s, color .2s;
+}
+
+/* Hover: đổi màu + gạch chân */
+.nav-link:hover {
+    background: rgba(255,255,255,.15);
+    color: white;
+    text-decoration: underline;
+}
+
+/* Link đang active: kiểu khác biệt */
+.nav-link.active {
+    background: rgba(255,255,255,.25);
+    color: white;
+    font-weight: 600;
+    border-bottom: 2px solid #fbbf24;
+}
+
+/* Zebra striping cho table — tr:nth-child(even) */
+.skill-table tbody tr:nth-child(even) {
+    background: #ebf8ff;
+}
+
+/* Hover row cho table */
+.skill-table tbody tr:hover {
+    background: #bee3f8;
+    transition: background .15s ease;
+}
