@@ -1,0 +1,202 @@
+/* ============================================================
+   boxmodel.css — Box Model Lab (Bài B2)
+   ============================================================ */
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.page-header {
+    background: linear-gradient(135deg, #0f172a, #1e40af);
+    color: white;
+    padding: 32px 24px;
+    text-align: center;
+}
+
+.page-header h1 { font-size: 2rem; margin-bottom: 8px; }
+.page-header p { opacity: .8; }
+
+.section {
+    max-width: 1100px;
+    margin: 32px auto;
+    padding: 0 16px;
+}
+
+.section h2 {
+    font-size: 1.4rem;
+    color: #1e40af;
+    border-left: 4px solid #3b82f6;
+    padding-left: 12px;
+    margin-bottom: 12px;
+}
+
+.desc {
+    color: #475569;
+    margin-bottom: 20px;
+    font-size: .95rem;
+}
+
+code {
+    background: #e2e8f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: .9em;
+}
+
+/* ── PHẦN 1 ─────────────────────────────────────────────── */
+.boxes-row {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #e2e8f0;
+    padding: 24px;
+    border-radius: 12px;
+    overflow-x: auto;
+}
+
+.box-wrap {
+    text-align: center;
+}
+
+.box-label {
+    font-size: .85rem;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+/* Hộp 1: content-box — chiều rộng thực tế = 350px */
+#box-content {
+    /* box-sizing: content-box; ← đây là mặc định, không cần ghi */
+    width: 300px;
+    padding: 20px;
+    border: 5px solid #dc2626;
+    background: #fee2e2;
+    color: #7f1d1d;
+    line-height: 1.8;
+    border-radius: 4px;
+    font-size: .9rem;
+}
+
+/* Hộp 2: border-box — chiều rộng thực tế = 300px */
+#box-border {
+    box-sizing: border-box;
+    width: 300px;
+    padding: 20px;
+    border: 5px solid #16a34a;
+    background: #dcfce7;
+    color: #14532d;
+    line-height: 1.8;
+    border-radius: 4px;
+    font-size: .9rem;
+}
+
+.calc-note {
+    margin-top: 10px;
+    font-size: .85rem;
+    color: #475569;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    max-width: 350px;
+}
+
+.explanation {
+    margin-top: 24px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 10px;
+    padding: 20px 24px;
+}
+
+.explanation h3 { color: #1d4ed8; margin-bottom: 10px; }
+.explanation ul { padding-left: 20px; }
+.explanation li { margin-bottom: 8px; }
+
+/* ── PHẦN 2 — 3 cột ──────────────────────────────────────── */
+.sub-title {
+    font-size: 1rem;
+    margin: 24px 0 8px;
+    color: #334155;
+}
+
+.container-3col {
+    width: 1000px;
+    max-width: 100%;
+    background: #cbd5e1;
+    overflow: hidden;   /* clearfix for float */
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+/* ── 3 cột ĐÚNG (border-box) ── */
+.border-box-demo .col-left,
+.border-box-demo .col-center,
+.border-box-demo .col-right {
+    box-sizing: border-box;
+    float: left;
+    font-size: .85rem;
+    line-height: 1.8;
+}
+
+.border-box-demo .col-left {
+    width: 250px;
+    padding: 15px;
+    background: #bfdbfe;
+    color: #1e3a5f;
+}
+
+.border-box-demo .col-center {
+    width: 500px;
+    padding: 20px;
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+.border-box-demo .col-right {
+    width: 250px;
+    padding: 15px;
+    background: #bfdbfe;
+    color: #1e3a5f;
+}
+
+/* ── 3 cột SAI (content-box — bị vỡ) ── */
+.col-left-broken {
+    box-sizing: content-box;   /* ← vấn đề ở đây */
+    float: left;
+    width: 250px;
+    padding: 15px;
+    background: #fecaca;
+    color: #7f1d1d;
+    font-size: .85rem;
+    line-height: 1.8;
+}
+
+.col-center-broken {
+    box-sizing: content-box;
+    float: left;
+    width: 500px;
+    padding: 20px;
+    background: #fef9c3;
+    color: #713f12;
+    font-size: .85rem;
+    line-height: 1.8;
+}
+
+.col-right-broken {
+    box-sizing: content-box;
+    float: left;
+    width: 250px;
+    padding: 15px;
+    background: #fecaca;
+    color: #7f1d1d;
+    font-size: .85rem;
+    line-height: 1.8;
+}
