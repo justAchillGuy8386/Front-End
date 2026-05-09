@@ -1,0 +1,143 @@
+/* ============================================================
+   specificity.css — Specificity Battle (Bài B3)
+   10 rules từ thấp đến cao specificity
+   ============================================================ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    min-height: 100vh;
+}
+
+.page-header {
+    background: linear-gradient(135deg, #1e1b4b, #4c1d95, #7c3aed);
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+}
+
+.page-header h1 { font-size: 2.2rem; margin-bottom: 10px; }
+.page-header p { opacity: .8; }
+
+.main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+}
+
+.section {
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    border: 1px solid #334155;
+}
+
+.section h2 {
+    font-size: 1.2rem;
+    color: #a78bfa;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 10px;
+}
+
+/* ── TARGET ELEMENT DEMO ─────────────────────────────────── */
+.container {
+    background: #0f172a;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+/* ══════════════════════════════════════════════════════════
+   10 CSS RULES — từ thấp đến cao specificity
+   Tất cả target: <p id="demo" class="text highlight">
+══════════════════════════════════════════════════════════ */
+
+/* Rule 1 — Specificity: (0,0,1) */
+p { color: gray; font-size: 2rem; font-weight: bold; letter-spacing: 2px; }
+
+/* Rule 2 — Specificity: (0,0,2) */
+div p { color: saddlebrown; }
+
+/* Rule 3 — Specificity: (0,1,0) */
+.text { color: royalblue; }
+
+/* Rule 4 — Specificity: (0,1,1) */
+p.text { color: darkcyan; }
+
+/* Rule 5 — Specificity: (0,2,0) */
+.text.highlight { color: teal; }
+
+/* Rule 6 — Specificity: (0,2,1) */
+p.text.highlight { color: darkorchid; }
+
+/* Rule 7 — Specificity: (1,0,0) */
+#demo { color: darkorange; }
+
+/* Rule 8 — Specificity: (1,1,0) */
+#demo.text { color: tomato; }
+
+/* Rule 9 — Specificity: (1,1,0) — same as rule 8, viết sau → thắng rule 8 */
+#demo.highlight { color: indianred; }
+
+/* Rule 10 — Specificity: (1,2,0) ← CAO NHẤT → THẮNG */
+#demo.text.highlight { color: crimson; }
+
+/* ── TABLE STYLING ───────────────────────────────────────── */
+.result-note {
+    background: #0f172a;
+    border: 1px solid #a78bfa;
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: .9rem;
+    line-height: 1.8;
+}
+
+code {
+    background: #334155;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: .88em;
+    color: #93c5fd;
+}
+
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .9rem;
+}
+
+.spec-table th {
+    background: #334155;
+    color: #e2e8f0;
+    padding: 10px 14px;
+    text-align: left;
+}
+
+.spec-table td {
+    padding: 9px 14px;
+    border-bottom: 1px solid #1e293b;
+    background: #0f172a;
+}
+
+.spec-table tr:hover td { background: #1e293b; }
+
+.winner-row td {
+    background: #1e1b4b !important;
+    border-top: 2px solid #7c3aed;
+    color: #fbbf24;
+}
+
+.swatch {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,.2);
+    vertical-align: middle;
+}
