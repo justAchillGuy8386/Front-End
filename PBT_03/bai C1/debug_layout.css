@@ -1,0 +1,129 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    margin: 0;
+}
+
+.page-header {
+    background: linear-gradient(135deg, #1e293b, #dc2626);
+    color: white;
+    padding: 32px 24px;
+    text-align: center;
+}
+
+.page-header h1 { font-size: 1.8rem; margin-bottom: 8px; }
+.page-header p { opacity: .85; }
+
+.page-main {
+    padding: 20px 16px 48px;
+}
+
+.demo-section {
+    max-width: 1000px;
+    margin: 0 auto 32px;
+    background: white;
+    border-radius: 12px;
+    padding: 20px 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+
+.demo-section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.desc {
+    font-size: .9rem;
+    color: #475569;
+    background: #f8fafc;
+    border-left: 4px solid #94a3b8;
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 16px;
+    line-height: 1.7;
+}
+
+code {
+    background: #e2e8f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: .88em;
+}
+
+.container {
+    width: 960px;
+    max-width: 100%;
+    margin: 0 auto;
+    background: #e2e8f0;
+    overflow: hidden;
+    border-radius: 8px;
+    min-height: 120px;
+}
+
+.clearfix { clear: both; }
+
+h3 { margin: 0 0 8px; font-size: 1rem; }
+p { margin: 4px 0; font-size: .88rem; line-height: 1.6; }
+
+/* ── LAYOUT BỊ VỠ (content-box mặc định) ── */
+.broken-layout .sidebar-broken {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #dc2626;
+    background: #fee2e2;
+    color: #7f1d1d;
+    float: left;
+    /* Thực tế: 300 + 40 + 2 = 342px */
+}
+
+.broken-layout .content-broken {
+    width: 660px;
+    padding: 30px;
+    border: 1px solid #dc2626;
+    background: #fef9c3;
+    color: #713f12;
+    float: left;
+}
+
+.fix1-layout .sidebar-fix1,
+.fix1-layout .content-fix1 {
+    box-sizing: border-box;  /* ← KEY FIX */
+    float: left;
+}
+
+.fix1-layout .sidebar-fix1 {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #16a34a;
+    background: #dcfce7;
+    color: #14532d;
+}
+
+.fix1-layout .content-fix1 {
+    width: 660px;
+    padding: 30px;
+    border: 1px solid #16a34a;
+    background: #f0fdf4;
+    color: #14532d;
+}
+
+.fix2-layout .sidebar-fix2 {
+    width: 258px;
+    padding: 20px;
+    border: 1px solid #2563eb;
+    background: #dbeafe;
+    color: #1e3a5f;
+    float: left;
+}
+
+.fix2-layout .content-fix2 {
+    width: 598px;
+    padding: 30px;
+    border: 1px solid #2563eb;
+    background: #eff6ff;
+    color: #1e3a5f;
+    float: left;
+}

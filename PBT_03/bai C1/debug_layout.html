@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Layout — Câu C1</title>
+    <link rel="stylesheet" href="debug_layout.css">
+</head>
+<body>
+
+<header class="page-header">
+    <h1>🐛 Debug Layout — Câu C1</h1>
+    <p>Container 960px · sidebar + content phải nằm cạnh nhau</p>
+</header>
+
+<main class="page-main">
+
+    <!-- ═══════ LAYOUT GỐC BỊ VỠ ═══════ -->
+    <section class="demo-section">
+        <h2>❌ Layout gốc — BỊ VỠ</h2>
+        <p class="desc">
+            Sidebar thực = 300 + 40 + 2 = <strong>342px</strong> |
+            Content thực = 660 + 60 + 2 = <strong>722px</strong> |
+            Tổng = <strong>1064px > 960px</strong> → content bị đẩy xuống dòng mới
+        </p>
+        <div class="container broken-layout">
+            <div class="sidebar-broken">
+                <h3>Sidebar (Bị vỡ)</h3>
+                <p>width: 300px<br>padding: 20px<br>border: 1px<br>→ thực: 342px</p>
+            </div>
+            <div class="content-broken">
+                <h3>Content (Bị vỡ)</h3>
+                <p>width: 660px<br>padding: 30px<br>border: 1px<br>→ thực: 722px</p>
+                <p>342 + 722 = 1064 > 960 → BỊ VỠ!</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </section>
+
+    <!-- ═══════ CÁCH SỬA 1: BORDER-BOX ═══════ -->
+    <section class="demo-section">
+        <h2>✅ Cách sửa 1 — Dùng <code>box-sizing: border-box</code></h2>
+        <p class="desc">
+            Thêm <code>* { box-sizing: border-box; }</code> → width khai báo = kích thước thực.<br>
+            Sidebar = <strong>300px</strong> | Content = <strong>660px</strong> | Tổng = <strong>960px ✓</strong>
+        </p>
+        <div class="container fix1-layout">
+            <div class="sidebar-fix1">
+                <h3>Sidebar (Fix 1)</h3>
+                <p>box-sizing: border-box<br>width: 300px → thực: 300px</p>
+            </div>
+            <div class="content-fix1">
+                <h3>Content (Fix 1)</h3>
+                <p>box-sizing: border-box<br>width: 660px → thực: 660px</p>
+                <p>300 + 660 = 960 = container ✓</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </section>
+
+    <!-- ═══════ CÁCH SỬA 2: ĐIỀU CHỈNH WIDTH ═══════ -->
+    <section class="demo-section">
+        <h2>✅ Cách sửa 2 — Điều chỉnh width thủ công (không dùng border-box)</h2>
+        <p class="desc">
+            Sidebar: width = 300 − 20×2 − 1×2 = <strong>258px</strong> |
+            Content: width = 660 − 30×2 − 1×2 = <strong>598px</strong><br>
+            Thực tế: (258+42) + (598+62) = 300 + 660 = <strong>960px ✓</strong>
+        </p>
+        <div class="container fix2-layout">
+            <div class="sidebar-fix2">
+                <h3>Sidebar (Fix 2)</h3>
+                <p>width: 258px<br>padding: 20px + border: 1px<br>→ thực: 300px</p>
+            </div>
+            <div class="content-fix2">
+                <h3>Content (Fix 2)</h3>
+                <p>width: 598px<br>padding: 30px + border: 1px<br>→ thực: 660px</p>
+                <p>300 + 660 = 960 ✓</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>
