@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Lab — Bài B2</title>
+    <link rel="stylesheet" href="boxmodel.css">
+</head>
+<body>
+
+<header class="page-header">
+    <h1>📦 Box Model Lab</h1>
+    <p>Chứng minh content-box vs border-box và Layout 3 cột</p>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PHẦN 1 — content-box vs border-box
+═══════════════════════════════════════════════════════════════ -->
+<section class="section">
+    <h2>Phần 1 — content-box vs border-box</h2>
+    <p class="desc">Cả 2 hộp đều khai báo <code>width: 300px; padding: 20px; border: 5px solid</code>. Hộp content-box sẽ RỘNG HƠN.</p>
+
+    <div class="boxes-row">
+        <div class="box-wrap">
+            <p class="box-label">Hộp 1 — content-box (mặc định)</p>
+            <div id="box-content">
+                <strong>content-box</strong><br>
+                width: 300px<br>
+                padding: 20px<br>
+                border: 5px<br>
+                <em>Thực tế: 350px</em>
+            </div>
+            <div class="calc-note">
+                Tính: 300 + 20×2 + 5×2 = <strong>350px</strong>
+            </div>
+        </div>
+
+        <div class="box-wrap">
+            <p class="box-label">Hộp 2 — border-box</p>
+            <div id="box-border">
+                <strong>border-box</strong><br>
+                width: 300px<br>
+                padding: 20px<br>
+                border: 5px<br>
+                <em>Thực tế: 300px</em>
+            </div>
+            <div class="calc-note">
+                Tính: 300px (padding & border đã bao gồm)<br>
+                Content thực = 300 − 20×2 − 5×2 = <strong>250px</strong>
+            </div>
+        </div>
+    </div>
+
+    <div class="explanation">
+        <h3>💡 Giải thích sự khác biệt</h3>
+        <ul>
+            <li><strong>content-box</strong>: <code>width</code> chỉ tính phần nội dung (content). Padding và border được <em>cộng thêm ra ngoài</em>. → Hộp to hơn khai báo.</li>
+            <li><strong>border-box</strong>: <code>width</code> bao gồm luôn content + padding + border. Phần nội dung thu nhỏ lại để vừa trong width khai báo. → Hộp đúng bằng khai báo.</li>
+        </ul>
+        <p>👉 Dùng DevTools (F12 → Computed tab) để xem Box Model diagram và kiểm chứng các số trên.</p>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PHẦN 2 — Layout 3 cột
+═══════════════════════════════════════════════════════════════ -->
+<section class="section">
+    <h2>Phần 2 — Layout 3 cột (container 1000px)</h2>
+
+    <h3 class="sub-title">✅ Với border-box (Hoạt động đúng)</h3>
+    <p class="desc">Tổng: 250 + 500 + 250 = 1000px ✓</p>
+    <div class="container-3col border-box-demo">
+        <div class="col-left">
+            <strong>Sidebar trái</strong><br>
+            250px · padding 15px<br>
+            <em>(border-box: tổng = 250px)</em>
+        </div>
+        <div class="col-center">
+            <strong>Content chính</strong><br>
+            500px · padding 20px<br>
+            <em>(border-box: tổng = 500px)</em>
+        </div>
+        <div class="col-right">
+            <strong>Sidebar phải</strong><br>
+            250px · padding 15px<br>
+            <em>(border-box: tổng = 250px)</em>
+        </div>
+    </div>
+
+    <h3 class="sub-title">❌ Không dùng border-box (Layout bị vỡ)</h3>
+    <p class="desc">Tổng thực tế: (250+30) + (500+40) + (250+30) = 1100px > 1000px → cột bị đẩy xuống!</p>
+    <div class="container-3col">
+        <div class="col-left-broken">
+            <strong>Sidebar trái</strong><br>
+            250px + padding 15px<br>
+            <em>(content-box: thực = 280px)</em>
+        </div>
+        <div class="col-center-broken">
+            <strong>Content chính</strong><br>
+            500px + padding 20px<br>
+            <em>(content-box: thực = 540px)</em>
+        </div>
+        <div class="col-right-broken">
+            <strong>Sidebar phải</strong><br>
+            250px + padding 15px<br>
+            <em>(content-box: thực = 280px)</em>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
