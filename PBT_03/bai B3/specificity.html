@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specificity Battle — Bài B3</title>
+    <link rel="stylesheet" href="specificity.css">
+</head>
+<body>
+
+<header class="page-header">
+    <h1>⚔️ Specificity Battle</h1>
+    <p>10 CSS rules target cùng 1 phần tử — specificity quyết định màu cuối cùng</p>
+</header>
+
+<main class="main">
+
+    <section class="section" id="target-section">
+        <h2>Phần tử mục tiêu</h2>
+
+        <div class="container" id="battle-zone">
+            <!-- Phần tử target chính -->
+            <p id="demo" class="text highlight">Hello World</p>
+        </div>
+
+        <div class="result-note">
+            <strong>Màu hiển thị:</strong> crimson<br>
+            <strong>Rule thắng:</strong> <code>#demo.text.highlight { color: crimson }</code><br>
+            <strong>Specificity:</strong> (1,2,0)
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>📊 Bảng specificity — từ thấp đến cao</h2>
+        <table class="spec-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Selector</th>
+                    <th>Specificity</th>
+                    <th>Color</th>
+                    <th>Preview</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><code>p</code></td>
+                    <td>(0,0,1)</td>
+                    <td>gray</td>
+                    <td><span class="swatch" style="background:gray"></span></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><code>div p</code></td>
+                    <td>(0,0,2)</td>
+                    <td>saddlebrown</td>
+                    <td><span class="swatch" style="background:saddlebrown"></span></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><code>.text</code></td>
+                    <td>(0,1,0)</td>
+                    <td>royalblue</td>
+                    <td><span class="swatch" style="background:royalblue"></span></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><code>p.text</code></td>
+                    <td>(0,1,1)</td>
+                    <td>darkcyan</td>
+                    <td><span class="swatch" style="background:darkcyan"></span></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><code>.text.highlight</code></td>
+                    <td>(0,2,0)</td>
+                    <td>teal</td>
+                    <td><span class="swatch" style="background:teal"></span></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><code>p.text.highlight</code></td>
+                    <td>(0,2,1)</td>
+                    <td>darkorchid</td>
+                    <td><span class="swatch" style="background:darkorchid"></span></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><code>#demo</code></td>
+                    <td>(1,0,0)</td>
+                    <td>darkorange</td>
+                    <td><span class="swatch" style="background:darkorange"></span></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td><code>#demo.text</code></td>
+                    <td>(1,1,0)</td>
+                    <td>tomato</td>
+                    <td><span class="swatch" style="background:tomato"></span></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td><code>#demo.highlight</code></td>
+                    <td>(1,1,0)</td>
+                    <td>indianred</td>
+                    <td><span class="swatch" style="background:indianred"></span></td>
+                </tr>
+                <tr class="winner-row">
+                    <td>10 🏆</td>
+                    <td><code>#demo.text.highlight</code></td>
+                    <td>(1,2,0)</td>
+                    <td><strong>crimson</strong></td>
+                    <td><span class="swatch" style="background:crimson"></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>🔄 Thử đổi thứ tự rules?</h2>
+        <p>Kết quả <strong>KHÔNG đổi</strong>. Vì specificity quyết định trước — rule có specificity cao nhất
+           <em>luôn thắng</em>, bất kể thứ tự viết trong file CSS. Thứ tự chỉ là tiebreaker khi specificity bằng nhau.</p>
+    </section>
+
+</main>
+
+</body>
+</html>
