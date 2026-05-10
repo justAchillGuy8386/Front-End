@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Grid Layout</title>
+    <link rel="stylesheet" href="grid.css">
+</head>
+<body>
+
+    <div class="grid-container">
+        
+        <!-- HEADER -->
+        <header class="header">
+            <div class="logo">ShopGrid</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <button>Search</button>
+            </div>
+            <div class="cart">🛒 Cart (0)</div>
+        </header>
+
+        <!-- HERO BANNER -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Summer Sale!</h2>
+                <p>Up to 50% off on all items.</p>
+                <button class="btn-shop">Shop Now</button>
+            </div>
+        </section>
+
+        <!-- SIDEBAR (Filter) -->
+        <aside class="sidebar">
+            <h3>Filters</h3>
+            <div class="filter-group">
+                <h4>Category</h4>
+                <label><input type="checkbox"> Electronics</label><br>
+                <label><input type="checkbox"> Clothing</label><br>
+                <label><input type="checkbox"> Home & Garden</label><br>
+                <label><input type="checkbox"> Sports</label>
+            </div>
+            <div class="filter-group">
+                <h4>Price Range</h4>
+                <label><input type="checkbox"> Under $50</label><br>
+                <label><input type="checkbox"> $50 - $100</label><br>
+                <label><input type="checkbox"> Over $100</label>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT (Products) -->
+        <main class="main-content">
+            <div class="products-grid">
+                <!-- Nổi bật (Bonus) -->
+                <div class="product-card featured">
+                    <div class="featured-badge">Featured</div>
+                    <img src="https://via.placeholder.com/600x300" alt="Featured Product">
+                    <h3>Premium Smart TV 55"</h3>
+                    <p class="price">$599.99</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Product 1">
+                    <h3>Smartphone XYZ</h3>
+                    <p class="price">$299.99</p>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Product 2">
+                    <h3>Wireless Earbuds</h3>
+                    <p class="price">$49.99</p>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Product 3">
+                    <h3>Fitness Tracker</h3>
+                    <p class="price">$79.99</p>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Product 4">
+                    <h3>Running Shoes</h3>
+                    <p class="price">$89.99</p>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Product 5">
+                    <h3>Coffee Maker</h3>
+                    <p class="price">$120.00</p>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Product 6">
+                    <h3>Bluetooth Speaker</h3>
+                    <p class="price">$35.00</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- ADS (Aside) -->
+        <aside class="ads">
+            <h3>Sponsored</h3>
+            <img src="https://via.placeholder.com/160x600" alt="Vertical Ad" class="ad-image">
+        </aside>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>&copy; 2026 ShopGrid E-Commerce. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
