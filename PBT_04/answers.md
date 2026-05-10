@@ -80,3 +80,53 @@ Câu hỏi thêm:
 5. **Card sản phẩm (ảnh trên, text giữa, nút dưới — nút luôn dính đáy):**
    - **Dùng:** Flexbox.
    - **Lý do:** Bố cục 1 chiều dọc (`flex-direction: column`). Sử dụng tuyệt chiêu `margin-top: auto` cho nút dưới cùng là cách hoàn hảo để đẩy nút dính sát xuống đáy card.
+
+### Câu C2
+
+**Lỗi 1:** Cards không đều chiều cao — nút "Mua" bị nhảy lên/xuống
+- **Nguyên nhân:** `.card-container` dùng flexbox nên các thẻ `.card` được stretch chiều cao bằng nhau, nhưng bản thân thẻ `.card` lại không dùng flexbox nên nội dung bên trong nó không lấp đầy chiều cao được. Nút "Mua" nằm ngay dưới text nên nếu text ngắn, nút sẽ lơ lửng.
+- **Cách sửa:** Biến thẻ `.card` thành một flex container theo chiều dọc và dùng `margin-top: auto` đẩy nút xuống.
+- **Code sửa:**
+```css
+.card-container { display: flex; flex-wrap: wrap; }
+.card { 
+    width: 30%; 
+    margin: 1.5%; 
+    display: flex; 
+    flex-direction: column;
+}
+.card img { width: 100%; }
+.card h3 { font-size: 18px; }
+.card .btn { 
+    padding: 10px; 
+    margin-top: auto;
+}
+```
+
+**Lỗi 2:** Muốn items nằm giữa cả ngang lẫn dọc trong container 100vh, nhưng item vẫn dính góc trái trên
+- **Nguyên nhân:** Container `.hero` đã có `display: flex;` nhưng chưa dùng các thuộc tính căn chỉnh của Flexbox (`justify-content` cho chiều ngang và `align-items` cho chiều dọc).
+- **Cách sửa:** Thêm `justify-content: center` và `align-items: center` vào `.hero`.
+- **Code sửa:**
+```css
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+.hero-content {
+    text-align: center;
+}
+```
+
+**Lỗi 3:** Sidebar bị co lại khi content quá dài
+- **Nguyên nhân:** Mặc định của Flexbox là cho phép các thẻ con co lại khi không đủ không gian (`flex-shrink: 1`). Khi nội dung `.content` quá dài, nó sẽ ép `.sidebar` nhỏ lại dưới mức `250px`.
+- **Cách sửa:** Chặn không cho thẻ `.sidebar` co lại bằng `flex-shrink: 0`.
+- **Code sửa:**
+```css
+.layout { display: flex; }
+.sidebar { 
+    width: 250px; 
+    flex-shrink: 0; /* Không cho phép co lại */
+}
+.content { flex: 1; }
+```
