@@ -61,3 +61,22 @@ Câu hỏi thêm:
 |  Item 7 |
 +---------+
 ```
+
+
+### Câu C1 
+
+1. **Navigation bar ngang (logo + menu + buttons):**
+   - **Dùng:** Flexbox.
+   - **Lý do:** Bố cục 1 chiều (ngang), dễ dàng điều chỉnh khoảng cách linh hoạt bằng `justify-content: space-between` và căn giữa dọc bằng `align-items: center`.
+2. **Lưới ảnh Instagram (3 cột đều nhau, số ảnh không biết trước):**
+   - **Dùng:** Grid.
+   - **Lý do:** Bố cục 2 chiều (nhiều hàng, nhiều cột). Grid kiểm soát cực tốt lưới đều nhau bằng `grid-template-columns: repeat(3, 1fr)` và quản lý khoảng cách bằng `gap`.
+3. **Layout blog: main content + sidebar:**
+   - **Dùng:** Grid (hoặc kết hợp cả hai).
+   - **Lý do:** Đây là bố cục macro (tổng thể của trang). Dùng Grid chia layout chính (`grid-template-columns: 1fr 300px`) rất gọn và trực quan.
+4. **Footer với 4 cột thông tin (Về chúng tôi, Liên kết, Hỗ trợ, Liên hệ):**
+   - **Dùng:** Grid (hoặc Flexbox).
+   - **Lý do:** Grid hợp lý hơn khi muốn chia cột chính xác và đều đặn (`repeat(4, 1fr)`). Nếu dùng Flexbox thì cũng được bằng cách set `flex: 1` cho mỗi cột.
+5. **Card sản phẩm (ảnh trên, text giữa, nút dưới — nút luôn dính đáy):**
+   - **Dùng:** Flexbox.
+   - **Lý do:** Bố cục 1 chiều dọc (`flex-direction: column`). Sử dụng tuyệt chiêu `margin-top: auto` cho nút dưới cùng là cách hoàn hảo để đẩy nút dính sát xuống đáy card.
