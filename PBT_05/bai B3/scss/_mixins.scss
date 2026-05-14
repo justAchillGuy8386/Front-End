@@ -1,0 +1,36 @@
+// ==========================================================================
+// SCSS MIXINS PARTIAL (_mixins.scss)
+// Ít nhất 3 mixins theo đúng yêu cầu đề bài
+// ==========================================================================
+
+// 1. Mixin quản lý Media Queries linh hoạt (Mobile-First)
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == 'tablet' {
+        @media (min-width: $breakpoint-tablet) { @content; }
+    } @else if $breakpoint == 'desktop' {
+        @media (min-width: $breakpoint-desktop) { @content; }
+    } @else if $breakpoint == 'xl' {
+        @media (min-width: $breakpoint-xl) { @content; }
+    } @else {
+        @media (min-width: $breakpoint) { @content; }
+    }
+}
+
+// 2. Mixin hỗ trợ hiển thị Flexbox Center nhanh chóng
+@mixin flex-center($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
+// 3. Mixin tạo bóng đổ cao cấp và mượt mà cho Card
+@mixin card-shadow {
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &:hover {
+        box-shadow: 0 16px 32px rgba(37, 99, 235, 0.12);
+        transform: translateY(-6px);
+    }
+}
