@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Sản Phẩm — Premium Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-container">
+            <a href="#" class="logo">✨ <span>Aura</span>Tech</a>
+            
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="#" class="active">Sản phẩm</a></li>
+                    <li><a href="#">Khuyến mãi</a></li>
+                    <li><a href="#">Thương hiệu</a></li>
+                    <li><a href="#">Hỗ trợ</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-icon" title="Tìm kiếm">🔍</button>
+                <button class="btn-icon cart-btn" title="Giỏ hàng">🛒 <span class="cart-count">3</span></button>
+                <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="app-layout">
+        <aside class="app-sidebar" id="appSidebar">
+            <div class="sidebar-header">
+                <h3>Bộ Lọc Sản Phẩm</h3>
+                <button class="close-sidebar-btn" id="closeSidebarBtn" title="Đóng bộ lọc">✕</button>
+            </div>
+            <div class="filter-group">
+                <h4>Danh mục</h4>
+                <ul>
+                    <li><label><input type="checkbox" checked> Điện thoại cao cấp</label></li>
+                    <li><label><input type="checkbox"> Laptop & Ultrabook</label></li>
+                    <li><label><input type="checkbox"> Đồng hồ thông minh</label></li>
+                    <li><label><input type="checkbox"> Âm thanh & Tai nghe</label></li>
+                </ul>
+            </div>
+            <div class="filter-group">
+                <h4>Mức giá</h4>
+                <div class="price-inputs">
+                    <input type="text" placeholder="Từ" value="0đ">
+                    <span>-</span>
+                    <input type="text" placeholder="Đến" value="50.000.000đ">
+                </div>
+            </div>
+            <div class="filter-group">
+                <h4>Đánh giá</h4>
+                <div class="rating-filter">
+                    <label><input type="radio" name="rating" checked> ⭐️⭐️⭐️⭐️⭐️ (Từ 5 sao)</label>
+                    <label><input type="radio" name="rating"> ⭐️⭐️⭐️⭐️ (Từ 4 sao)</label>
+                </div>
+            </div>
+            <button class="btn-apply-filter">Áp dụng bộ lọc</button>
+        </aside>
+
+        <main class="app-main">
+            <div class="mobile-filter-bar">
+                <button class="btn-toggle-filter" id="toggleFilterBtn">
+                    ⚙️ Bật / Tắt Bộ Lọc
+                </button>
+                <span class="results-count">Hiển thị 8 sản phẩm</span>
+            </div>
+
+            <!-- THE PRODUCT GRID -->
+            <section class="product-grid">
+                <!-- Card 1 -->
+                <article class="product-card">
+                    <div class="card-badge">Mới</div>
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1595286154230-1141a4e2704e?w=500&auto=format&fit=crop&q=80" alt="iPhone 15 Pro Max">
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Điện thoại</span>
+                        <h3 class="product-title">iPhone 15 Pro Max 256GB</h3>
+                        <div class="rating">⭐⭐⭐⭐⭐ <span>(128)</span></div>
+                        <div class="price-row">
+                            <span class="price">29.490.000đ</span>
+                            <span class="old-price">34.990.000đ</span>
+                        </div>
+                        <button class="btn-add-cart">Thêm vào giỏ</button>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="product-card">
+                    <div class="card-badge hot">Bán chạy</div>
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop&q=80" alt="Tai nghe Sony WH-1000XM5">
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Âm thanh</span>
+                        <h3 class="product-title">Tai nghe Sony WH-1000XM5</h3>
+                        <div class="rating">⭐⭐⭐⭐⭐ <span>(95)</span></div>
+                        <div class="price-row">
+                            <span class="price">7.890.000đ</span>
+                            <span class="old-price">9.490.000đ</span>
+                        </div>
+                        <button class="btn-add-cart">Thêm vào giỏ</button>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="product-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&auto=format&fit=crop&q=80" alt="MacBook Air M3">
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Laptop</span>
+                        <h3 class="product-title">MacBook Air M3 13-inch 2024</h3>
+                        <div class="rating">⭐⭐⭐⭐⭐ <span>(64)</span></div>
+                        <div class="price-row">
+                            <span class="price">27.990.000đ</span>
+                            <span class="old-price">30.490.000đ</span>
+                        </div>
+                        <button class="btn-add-cart">Thêm vào giỏ</button>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="product-card">
+                    <div class="card-badge sale">-15%</div>
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500&auto=format&fit=crop&q=80" alt="Apple Watch Series 9">
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Đồng hồ</span>
+                        <h3 class="product-title">Apple Watch Series 9 GPS</h3>
+                        <div class="rating">⭐⭐⭐⭐⭐ <span>(42)</span></div>
+                        <div class="price-row">
+                            <span class="price">10.290.000đ</span>
+                            <span class="old-price">12.190.000đ</span>
+                        </div>
+                        <button class="btn-add-cart">Thêm vào giỏ</button>
+                    </div>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="product-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&auto=format&fit=crop&q=80" alt="Dell XPS 14">
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Laptop</span>
+                        <h3 class="product-title">Dell XPS 14 9440 Core Ultra</h3>
+                        <div class="rating">⭐⭐⭐⭐<span>(18)</span></div>
+                        <div class="price-row">
+                            <span class="price">45.990.000đ</span>
+                            <span class="old-price">49.990.000đ</span>
+                        </div>
+                        <button class="btn-add-cart">Thêm vào giỏ</button>
+                    </div>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="product-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=500&auto=format&fit=crop&q=80" alt="Samsung Galaxy S24 Ultra">
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Điện thoại</span>
+                        <h3 class="product-title">Samsung Galaxy S24 Ultra</h3>
+                        <div class="rating">⭐⭐⭐⭐⭐ <span>(210)</span></div>
+                        <div class="price-row">
+                            <span class="price">31.990.000đ</span>
+                            <span class="old-price">33.990.000đ</span>
+                        </div>
+                        <button class="btn-add-cart">Thêm vào giỏ</button>
+                    </div>
+                </article>
+
+                <!-- Card 7 -->
+                <article class="product-card">
+                    <div class="card-badge">Mới</div>
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500&auto=format&fit=crop&q=80" alt="Giày thể thao cao cấp">
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Phụ kiện</span>
+                        <h3 class="product-title">Giày thể thao công nghệ thông minh</h3>
+                        <div class="rating">⭐⭐⭐⭐⭐ <span>(33)</span></div>
+                        <div class="price-row">
+                            <span class="price">3.290.000đ</span>
+                            <span class="old-price">3.990.000đ</span>
+                        </div>
+                        <button class="btn-add-cart">Thêm vào giỏ</button>
+                    </div>
+                </article>
+
+                <!-- Card 8 -->
+                <article class="product-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500&auto=format&fit=crop&q=80" alt="Camera Leica M11">
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Nhiếp ảnh</span>
+                        <h3 class="product-title">Máy ảnh kỹ thuật số cao cấp Retro</h3>
+                        <div class="rating">⭐⭐⭐⭐⭐ <span>(7)</span></div>
+                        <div class="price-row">
+                            <span class="price">18.500.000đ</span>
+                            <span class="old-price">21.000.000đ</span>
+                        </div>
+                        <button class="btn-add-cart">Thêm vào giỏ</button>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <aside class="app-adsbar">
+            <div class="ads-card">
+                <h4>🔥 Ưu đãi độc quyền</h4>
+                <p>Nhập mã <strong>AURA100</strong> giảm ngay 500k cho đơn từ 10 Triệu.</p>
+                <a href="#" class="btn-ads">Xem chi tiết</a>
+            </div>
+            <div class="ads-banner">
+                <span>⚡️ FLASH SALE</span>
+                <h3>Giờ vàng giá sốc</h3>
+            </div>
+        </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>✨ AuraTech Store</h4>
+                <p>Hệ sinh thái công nghệ hàng đầu với trải nghiệm mua sắm đẳng cấp và dịch vụ hậu mãi uy tín.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Sản phẩm</h4>
+                <ul>
+                    <li><a href="#">Điện thoại</a></li>
+                    <li><a href="#">Laptop & PC</a></li>
+                    <li><a href="#">Âm thanh</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Hỗ trợ khách hàng</h4>
+                <ul>
+                    <li><a href="#">Trung tâm trợ giúp</a></li>
+                    <li><a href="#">Chính sách bảo hành</a></li>
+                    <li><a href="#">Giao hàng & Thanh toán</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AuraTech. Bài tập PBT_05 Responsive Design — Mobile-First.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('is-active');
+            mainNav.classList.toggle('is-open');
+        });
+
+        const toggleFilterBtn = document.getElementById('toggleFilterBtn');
+        const appSidebar = document.getElementById('appSidebar');
+        const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+
+        toggleFilterBtn.addEventListener('click', () => {
+            appSidebar.classList.toggle('is-active');
+        });
+
+        closeSidebarBtn.addEventListener('click', () => {
+            appSidebar.classList.remove('is-active');
+        });
+    </script>
+</body>
+</html>

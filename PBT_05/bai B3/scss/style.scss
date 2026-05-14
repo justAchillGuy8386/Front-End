@@ -1,0 +1,31 @@
+// ==========================================================================
+// MAIN SCSS ENTRY FILE (style.scss)
+// Import các partials theo cấu trúc quy định
+// ==========================================================================
+
+@import 'variables';
+@import 'mixins';
+@import 'components';
+
+// Tùy chỉnh thêm các lớp layout hoặc tiện ích tổng thể sử dụng biến và mixin
+body {
+    background-color: $bg-base;
+    color: $text-main;
+    font-family: $font-primary;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: $spacing-md;
+
+    @include respond-to('tablet') {
+        padding: $spacing-lg;
+    }
+
+    @include respond-to('desktop') {
+        padding: $spacing-xl;
+    }
+}

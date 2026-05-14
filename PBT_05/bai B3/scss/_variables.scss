@@ -1,0 +1,35 @@
+// ==========================================================================
+// SCSS VARIABLES PARTIAL (_variables.scss)
+// Ít nhất 8 biến theo đúng yêu cầu đề bài
+// ==========================================================================
+
+// Màu sắc chủ đạo và phụ trợ
+$primary-color: #2563eb;
+$primary-dark: #1d4ed8;
+$primary-light: #eff6ff;
+$secondary-color: #e11d48;
+$text-main: #0f172a;
+$text-muted: #64748b;
+$bg-base: #f8fafc;
+$bg-surface: #ffffff;
+$border-color: #e2e8f0;
+
+// Phông chữ
+$font-primary: 'Plus Jakarta Sans', sans-serif;
+
+// Breakpoints chuẩn
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-xl: 1200px;
+
+// Hệ thống khoảng cách (Spacing)
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+// Bán kính bo góc (Border radius)
+$radius-sm: 6px;
+$radius-md: 12px;
+$radius-lg: 20px;
