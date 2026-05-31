@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" id="name" placeholder="John Doe">
+                <div class="feedback" id="nameFeedback"></div>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="john@example.com">
+                <div class="feedback" id="emailFeedback"></div>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="password">
+                <div class="strength-bar-container">
+                    <div id="strengthBar" class="strength-bar"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" id="confirmPassword">
+                <div class="feedback" id="confirmFeedback"></div>
+            </div>
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="text" id="phone" placeholder="0901-234-567" maxlength="12">
+                <div class="feedback" id="phoneFeedback"></div>
+            </div>
+            <button type="submit" id="submitBtn" disabled>Register</button>
+        </form>
+    </div>
+    
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <h3>Đăng ký thành công!</h3>
+            <pre id="successData"></pre>
+            <button id="closeModal">Close</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

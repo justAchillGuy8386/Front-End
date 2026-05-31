@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Store</h1>
+        <div class="header-actions">
+            <button id="themeToggle">🌓 Theme</button>
+            <div class="cart-badge">🛒 <span id="cartCount">0</span></div>
+        </div>
+    </header>
+    <main>
+        <aside class="sidebar">
+            <input type="text" id="searchInput" placeholder="Search products...">
+            <div id="categoryFilters">
+                <button class="active" data-cat="all">All</button>
+                <button data-cat="phone">Phones</button>
+                <button data-cat="laptop">Laptops</button>
+                <button data-cat="tablet">Tablets</button>
+                <button data-cat="accessory">Accessories</button>
+            </div>
+            <select id="sortSelect">
+                <option value="default">Sort by...</option>
+                <option value="priceAsc">Price: Low to High</option>
+                <option value="priceDesc">Price: High to Low</option>
+                <option value="nameAsc">Name: A to Z</option>
+                <option value="ratingDesc">Highest Rated</option>
+            </select>
+        </aside>
+        <div id="productGrid"></div>
+    </main>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
