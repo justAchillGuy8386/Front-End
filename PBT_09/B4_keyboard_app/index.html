@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyboard App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content-wrapper">
+        <h1>Keyboard Shortcuts & Accessibility</h1>
+        <p>Press <kbd>Ctrl</kbd> + <kbd>K</kbd> for command palette.<br> Arrow keys / 1-9 to navigate gallery. Space to play/pause slideshow.</p>
+        
+        <div class="gallery" aria-label="Image Gallery">
+            <button id="prevBtn" aria-label="Previous image">&lt;</button>
+            <div class="image-container">
+                <img id="mainImage" src="https://placehold.co/400x300/ccc/000?text=Image+1" alt="Gallery Image 1" tabindex="0">
+            </div>
+            <button id="nextBtn" aria-label="Next image">&gt;</button>
+        </div>
+        <div class="status">Image <span id="imgIndex">1</span> of 9 <span id="playStatus"></span></div>
+    </div>
+
+    <div id="commandPalette" class="palette-overlay hidden" role="dialog" aria-label="Command Palette">
+        <div class="palette-modal">
+            <input type="text" id="cmdInput" placeholder="Type a command..." aria-autocomplete="list">
+            <ul id="cmdList" role="listbox">
+                <li tabindex="-1" role="option" data-cmd="darkmode">Toggle Dark Mode</li>
+                <li tabindex="-1" role="option" data-cmd="play">Play Slideshow</li>
+                <li tabindex="-1" role="option" data-cmd="pause">Pause Slideshow</li>
+                <li tabindex="-1" role="option" data-cmd="first">Go to first image</li>
+                <li tabindex="-1" role="option" data-cmd="last">Go to last image</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
