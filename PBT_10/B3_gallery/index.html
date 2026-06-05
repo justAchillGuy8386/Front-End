@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Scroll Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Infinite Scroll Gallery</h1>
+        <p>Cuộn xuống dưới để tải thêm ảnh (Lazy Loading)</p>
+    </header>
+
+    <main>
+        <div id="galleryGrid" class="gallery-grid">
+            <!-- Images will be injected here -->
+        </div>
+
+        <!-- Indicator khi đang load -->
+        <div id="load-trigger" class="load-trigger hidden">
+            <div class="spinner"></div>
+            <span>Đang tải thêm...</span>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox hidden">
+        <span class="close-btn">&times;</span>
+        <img id="lightboxImg" src="" alt="Full view">
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
