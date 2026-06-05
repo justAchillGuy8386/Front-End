@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-API Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Multi-API Dashboard</h1>
+        <button id="refreshBtn">🔄 Refresh All</button>
+        <p id="timingInfo">Click Refresh to load data.</p>
+    </header>
+
+    <!-- Global Loading Overlay -->
+    <div id="globalLoading" class="global-loading">
+        <div class="spinner-large"></div>
+        <p>Fetching all data...</p>
+    </div>
+
+    <main class="dashboard-grid">
+        <!-- Widget 1: Random User -->
+        <div class="widget" id="widget-user">
+            <div class="widget-header">
+                <h2>👤 Random User</h2>
+                <div class="widget-status loading">Loading...</div>
+            </div>
+            <div class="widget-content" id="content-user">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+
+        <!-- Widget 2: Weather Info -->
+        <div class="widget" id="widget-weather">
+            <div class="widget-header">
+                <h2>🌤️ Weather (London)</h2>
+                <div class="widget-status loading">Loading...</div>
+            </div>
+            <div class="widget-content" id="content-weather">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+
+        <!-- Widget 3: Random Dog -->
+        <div class="widget" id="widget-dog">
+            <div class="widget-header">
+                <h2>🐶 Random Dog</h2>
+                <div class="widget-status loading">Loading...</div>
+            </div>
+            <div class="widget-content" id="content-dog">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
